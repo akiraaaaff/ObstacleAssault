@@ -16,7 +16,7 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 
-	SetActorLocation(startingPos);
+	startingPos = GetActorLocation();
 	
 }
 
@@ -25,20 +25,18 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
-	FVector acceleration = FVector(20,20,0);
 
-
-	velocity += acceleration * DeltaTime;
-
-	SetActorLocation(GetActorLocation()+velocity);
-	
 	distanceMoved = FVector::Dist(GetActorLocation(), startingPos);
 
-	if(distanceMoved >= 1200){
-		SetActorLocation(startingPos);
-		velocity = initVelocity;
+	if(distanceMoved >= moveDistance){
+		velocity -= acceleration * DeltaTime;
+	}
+	else
+	{
+		velocity += acceleration * DeltaTime;
 	}
 
+	SetActorLocation(GetActorLocation()+velocity);
 	
 }
 
