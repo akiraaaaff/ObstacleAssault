@@ -23,4 +23,13 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(EditAnywhere)
+	FVector startingPos = FVector(1,2,3);
+	
+	UPROPERTY(VisibleAnywhere)
+	float distanceMoved = -1;
+
+
+	FVector velocity = FVector(2,2,0);
+	FVector initVelocity = FVector(2,2,0);
 };
