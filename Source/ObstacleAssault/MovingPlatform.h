@@ -31,6 +31,8 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	FVector acceleration = FVector(0.0f,0.0f,20.0f);
+	
+	UPROPERTY(EditAnywhere)
 	FVector velocity = FVector(0.0f,0.0f,1.0f);
 
 	UPROPERTY(EditAnywhere)
