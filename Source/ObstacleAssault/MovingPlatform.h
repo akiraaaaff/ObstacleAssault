@@ -34,9 +34,22 @@ public:
 	
 	UPROPERTY(EditAnywhere)
 	FVector velocity = FVector(0.0f,0.0f,1.0f);
+	FVector initVelocity = FVector(0.0f,0.0f,1.0f);
+
+	
+	UPROPERTY(EditAnywhere)
+	FRotator rotationVelocity;
 
 	UPROPERTY(EditAnywhere)
 	float moveDistance = 500.0f;
 
+	UPROPERTY(VisibleAnywhere)
+	bool goingForward = true;
 
+	//float previousVeloctiyDot = 0;
+
+	void MovePlatform(float DeltaTime);
+	void RotatePlatform(float DeltaTime);
+	bool ShouldPlatformReturn() const;
+	float GetDistanceMoved() const;
 };
