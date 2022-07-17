@@ -8,8 +8,8 @@ The game currently has only 1 level.
 
 
 ## Control
-WASD - Move.
-Spacebar - Jump.
+#### WASD - Move.
+#### Spacebar - Jump.
 
 
 ## Links
